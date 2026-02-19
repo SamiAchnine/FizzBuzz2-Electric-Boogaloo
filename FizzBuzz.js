@@ -7,6 +7,7 @@ let output;
 document.addEventListener("submit", function() {
     event.preventDefault();
     output = fizzBuzz(numberInput.value);
+    result.textContent = output;
 });
 
 
@@ -25,4 +26,4 @@ function fizzBuzz(inp) {
     }
 }
 
-result.textContent = output;
+
