@@ -1,17 +1,28 @@
-// TODO: Define constants for the form and the result display area
+const numberInput = document.getElementById("numberInput");
+const submitButton = document.getElementById("submit");
+const result = document.getElementById("result")
+let output; 
 
-// TODO: Add the first line of the event listener to handle form submission
 
-    // Prevent the form from refreshing the page
+document.addEventListener("submit", function() {
     event.preventDefault();
+    output = fizzBuzz(numberInput.value);
+});
 
-// TODO: Get the number from the form input
 
-// TODO: Write FizzBuzz logic here
-// If divisible by both 3 and 5, set the output to "FizzBuzz"
-// If divisible by 3, set the output to "Fizz"
-// If divisible by 5, set the output to "Buzz"
-// Otherwise, set the output to the number itself
+function fizzBuzz(inp) {
+    if (inp % 3 === 0 && inp % 5 === 0) {
+        return "FizzBuzz";
+    }
+    else if (inp % 5 === 0){
+        return "Buzz";
+    }
+    else if (inp % 3 === 0){
+        return "Fizz";
+    }
+    else {
+        return inp;
+    }
+}
 
-// Display the result on the page
 result.textContent = output;
